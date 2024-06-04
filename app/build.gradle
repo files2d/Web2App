@@ -19,7 +19,7 @@ android {
         release {
             keyAlias 'android'
             keyPassword '123456'
-            storeFile file('android.jks')  // 确保路径正确
+            storeFile file('../android.jks')  // 确保路径正确
             storePassword '123456'
             v1SigningEnabled true
             v2SigningEnabled true
