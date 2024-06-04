@@ -50,6 +50,9 @@ jobs:
     - name: Get current date
       id: get_date
       run: echo "::set-output name=date::$(date '+%Y%m%d-%H%M%S')"
+
+    - name: Check APK file exists
+      run: ls -l app/build/outputs/apk/release/
       
     - name: Upload APK to Release
       id: upload-release-asset
