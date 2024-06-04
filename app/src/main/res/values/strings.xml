@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Web2App</string>
-    <string name="web_url">https://google.com</string>
+    <string name="app_name">测试</string>
+    <string name="web_url">https://www.baidu.com</string>
 </resources>
