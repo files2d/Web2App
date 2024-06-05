@@ -34,10 +34,7 @@ Handler handler = new Handler();
         // 获取 ImageView 控件
         ImageView imageView = findViewById(R.id.splash_image_view);
 
-        // 使用 Glide 加载网络图片
-//        String imageUrl = "https://img.wssss.org/file/c22290568d74c491f8450.png";
-
-        String imageUrl = getYourImageUrl(); // 假设这是您获取图片URL的方法
+        String imageUrl = getImageUrl(); // 假设这是您获取图片URL的方法
 
         if (imageUrl != null && !imageUrl.isEmpty()) {
             // 加载网络图片
@@ -61,7 +58,7 @@ Handler handler = new Handler();
         }, 2000);
     }
 
-    private String getYourImageUrl() {
+    private String getImageUrl() {
         // 返回图片URL，或者null/空字符串如果没有URL
         String urlString = "https://json.098975.xyz/app?id=2";
 
