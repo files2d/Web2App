@@ -1,5 +1,5 @@
 ext {
-    app_name = "Test App"
+    app_name = "Test1 App"
     isLocal = "false"
     application_id = "com.haitang.webapp"
     version_Name = "1.2" //随便写
