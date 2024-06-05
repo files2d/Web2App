@@ -1,5 +1,5 @@
 # Web2App
-## Convert any website into android app with ease
+## Convert any website into android app with ease.
 
 ## Getting Started
 1. Clone / Download the repo
