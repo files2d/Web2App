@@ -8,6 +8,9 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
 
 public class MainActivity extends Activity {
 
@@ -18,6 +21,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         webView = (WebView) findViewById(R.id.web_view_home);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setLoadWithOverviewMode(true);
@@ -39,7 +43,27 @@ public class MainActivity extends Activity {
             }
         });
 
-        webView.loadUrl(getString(R.string.web_url));
+        //webView.loadUrl(getString(R.string.web_url));
+        webView.loadUrl(BuildConfig.web_url);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        webView.loadUrl(BuildConfig.web_url);
+                        return true;
+                    case R.id.nav_dashboard:
+                        webView.loadUrl("https://example.com/dashboard");
+                        return true;
+                    case R.id.nav_notifications:
+                        webView.loadUrl("https://example.com/notifications");
+                        return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     @Override

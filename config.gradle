@@ -1,0 +1,9 @@
+ext {
+    app_name = "Test App"
+    isLocal = "false"
+    application_id = "com.haitang.webapp"
+    version_Name = "1.2" //随便写
+    version_Code = 1 //由小改大没关系，大改小会提示
+    web_url = "https://blog.wssss.org"
+}
+
