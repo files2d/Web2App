@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -60,7 +59,7 @@ Handler handler = new Handler();
 
     private String getImageUrl() {
         // 返回图片URL，或者null/空字符串如果没有URL
-        String urlString = "https://json.098975.xyz/app?id=2";
+        String urlString = "https://json.098975.xyz/api/records/apps/1?join=app_button&join=app_pass";
 
         try {
             URL url = new URL(urlString);
@@ -78,11 +77,14 @@ Handler handler = new Handler();
             }
             reader.close();
 
-            JSONArray jsonArray = new JSONArray(jsonBuilder.toString());
-            if (jsonArray.length() > 0) {
-                JSONObject jsonObject = jsonArray.getJSONObject(0);
-                return jsonObject.getString("image");
-            }
+            JSONObject jsonObject = new JSONObject(jsonBuilder.toString());
+            return jsonObject.getString("img_background");
+
+            //JSONArray jsonArray = new JSONArray(jsonBuilder.toString());
+            //if (jsonArray.length() > 0) {
+                //JSONObject jsonObject = jsonArray.getJSONObject(0);
+                //return jsonObject.getString("img_background");
+            //}
         } catch (Exception e) {
             e.printStackTrace();
         }
